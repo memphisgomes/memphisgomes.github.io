@@ -10,41 +10,29 @@
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Playfair+Display:wght@800&display=swap"
-      rel="stylesheet"
-    >
+    <!-- Preload das fontes principais para acelerar a renderização -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Playfair+Display:wght@800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Playfair+Display:wght@800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Playfair+Display:wght@800&display=swap">
+    </noscript>
+    
     <link rel="stylesheet" href="styles.css">
-
-      <!-- Meta Pixel Code -->
-      <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1826974878672339');
-      fbq('track', 'PageView');
-      </script>
-      <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1826974878672339&ev=PageView&noscript=1"
-      /></noscript>
-      <!-- End Meta Pixel Code -->
   </head>
   <body>
     <main>
       <section class="hero">
         <div class="wrap hero__inner">
-          <img class="logo" src="assets/c.png" alt="Logo Dominando a Caligrafia">
+          <img class="logo" src="assets/c.png" alt="Logo Dominando a Caligrafia" width="76" height="76">
           <p class="eyebrow">Material digital para imprimir</p>
           <h1>Dominando a Caligrafia</h1>
           <p class="hero__text">
             Um pacote pronto para transformar a letra das crianças com traços, palavras,
             coordenação motora e páginas simples, bonitas e fáceis de usar em casa.
           </p>
+
+          <!-- BOTÃO MOVIDO PARA CIMA - CRÍTICO PARA CONVERSÃO -->
+          <a class="button button--hero" href="https://pay.cakto.com.br/39ae5jh_459442">Quero meu material agora</a>
 
           <div class="product-stack" aria-label="Prévia do material de caligrafia">
             <article class="cover cover--green">
@@ -69,8 +57,6 @@
               </div>
             </article>
           </div>
-
-          <a class="button button--hero" href="https://pay.cakto.com.br/39ae5jh_459442">Quero meu material agora</a>
         </div>
       </section>
 
