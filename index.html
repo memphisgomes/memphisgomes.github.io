@@ -10,14 +10,30 @@
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Preload das fontes principais para acelerar a renderização -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Playfair+Display:wght@800&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Playfair+Display:wght@800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Playfair+Display:wght@800&display=swap">
-    </noscript>
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Playfair+Display:wght@800&display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="border-glow.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1826974878672339');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1826974878672339&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <main>
@@ -35,21 +51,24 @@
           <a class="button button--hero" href="https://pay.cakto.com.br/39ae5jh_459442">Quero meu material agora</a>
 
           <div class="product-stack" aria-label="Prévia do material de caligrafia">
-            <article class="cover cover--green">
+            <article class="cover cover--green" data-glow>
+              <span class="edge-light"></span>
               <span class="cover__pill">304</span>
               <div class="cover__content">
                 <strong>Atividades de Caligrafia</strong>
                 <small>letras, sílabas e palavras</small>
               </div>
             </article>
-            <article class="cover cover--dark">
+            <article class="cover cover--dark" data-glow>
+              <span class="edge-light"></span>
               <span class="cover__pill">139</span>
               <div class="cover__content">
                 <strong>Desenhos para Colorir</strong>
                 <small>coordenação e criatividade</small>
               </div>
             </article>
-            <article class="cover cover--white">
+            <article class="cover cover--white" data-glow>
+              <span class="edge-light"></span>
               <span class="cover__pill">Bônus</span>
               <div class="cover__content">
                 <strong>Tabuada de Multiplicação</strong>
@@ -65,37 +84,74 @@
           <h2>Motivos para adquirir o material de caligrafia:</h2>
           <div class="reason-grid">
             <article class="reason">
-              <span class="reason__icon">✍</span>
+              <span class="reason__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                  <path d="M2 2l7.586 7.586"/>
+                  <circle cx="11" cy="11" r="2"/>
+                </svg>
+              </span>
               <small class="reason__tag">Treino progressivo</small>
               <h3>Prática guiada</h3>
               <p>Atividades progressivas para treinar traços, letras e palavras com repetição.</p>
             </article>
             <article class="reason">
-              <span class="reason__icon">☑</span>
+              <span class="reason__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
               <small class="reason__tag">Acesso imediato</small>
               <h3>Uso imediato</h3>
               <p>Receba o arquivo digital e imprima as páginas que quiser, quando precisar.</p>
             </article>
             <article class="reason">
-              <span class="reason__icon">★</span>
+              <span class="reason__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="13.5" cy="6.5" r=".5"/>
+                  <circle cx="17.5" cy="10.5" r=".5"/>
+                  <circle cx="8.5" cy="7.5" r=".5"/>
+                  <circle cx="6.5" cy="12.5" r=".5"/>
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+                </svg>
+              </span>
               <small class="reason__tag">Mais engajamento</small>
               <h3>Mais interesse</h3>
               <p>Desenhos para colorir ajudam a manter a criança envolvida na rotina.</p>
             </article>
             <article class="reason">
-              <span class="reason__icon">⌁</span>
+              <span class="reason__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                </svg>
+              </span>
               <small class="reason__tag">Firmeza no lápis</small>
               <h3>Coordenação motora</h3>
               <p>Exercícios pensados para fortalecer controle, direção e firmeza no lápis.</p>
             </article>
             <article class="reason">
-              <span class="reason__icon">∞</span>
+              <span class="reason__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 4 23 10 17 10"/>
+                  <polyline points="1 20 1 14 7 14"/>
+                  <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                </svg>
+              </span>
               <small class="reason__tag">Use quantas vezes quiser</small>
               <h3>Reimprima sempre</h3>
               <p>Use o mesmo material várias vezes para revisar e acompanhar a evolução.</p>
             </article>
             <article class="reason">
-              <span class="reason__icon">+</span>
+              <span class="reason__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                  <line x1="8" y1="6" x2="16" y2="6"/>
+                  <line x1="8" y1="10" x2="16" y2="10"/>
+                  <line x1="8" y1="14" x2="13" y2="14"/>
+                  <line x1="8" y1="18" x2="13" y2="18"/>
+                </svg>
+              </span>
               <small class="reason__tag">Item extra incluso</small>
               <h3>Bônus incluso</h3>
               <p>Uma tabuada de multiplicação acompanha o pacote sem custo adicional.</p>
@@ -114,7 +170,7 @@
                 <div class="sheet-lines">
                   <span>A a A a</span>
                   <span>caligrafia</span>
-                  <span>tracado</span>
+                  <span>traçado</span>
                 </div>
                 <div class="sheet-footer">
                   <b>letras</b>
@@ -163,7 +219,7 @@
               <div class="paper-preview times-table">
                 <div class="times-table-head">
                   <span>Bonus</span>
-                  <b>Tabuada de multiplicacao</b>
+                  <b>Tabuada de multiplicação</b>
                 </div>
                 <div class="times-table-list">
                   <span>2 x 3 = 6</span>
@@ -354,6 +410,7 @@
       </div>
     </footer>
 
+    <script src="border-glow.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

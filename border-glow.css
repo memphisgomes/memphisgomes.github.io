@@ -1,0 +1,204 @@
+/**
+ * BorderGlow CSS - Efeito de glow interativo nas bordas
+ * Otimizado para mobile-first
+ */
+
+.border-glow-card {
+  --edge-proximity: 0;
+  --cursor-angle: 45deg;
+  --edge-sensitivity: 25;
+  --color-sensitivity: calc(var(--edge-sensitivity) + 20);
+  --glow-padding: 35px;
+  --cone-spread: 28;
+  --fill-opacity: 0.4;
+
+  position: relative;
+  isolation: isolate;
+  border-radius: 24px;
+  overflow: visible;
+  transform: translate3d(0, 0, 0.01px);
+  display: grid;
+
+  /* Transição suave do glow */
+  transition: all 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Camada de borda com gradiente colorido */
+.border-glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(135deg, rgba(32, 185, 68, 0.15), rgba(32, 185, 68, 0.05)) border-box,
+    linear-gradient(
+      135deg,
+      var(--glow-color, hsl(120deg 100% 50% / 100%)),
+      var(--glow-color-60, hsl(120deg 100% 50% / 60%))
+    ) border-box;
+  opacity: calc(max(0, (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity))));
+  z-index: 2;
+  pointer-events: none;
+
+  /* Máscara cônica para efeito direcional */
+  -webkit-mask-image: conic-gradient(
+    from var(--cursor-angle) at 50% 50%,
+    black calc(var(--cone-spread) * 1%),
+    transparent calc((var(--cone-spread) + 20) * 1%),
+    transparent calc((100 - var(--cone-spread) - 20) * 1%),
+    black calc((100 - var(--cone-spread)) * 1%)
+  );
+  mask-image: conic-gradient(
+    from var(--cursor-angle) at 50% 50%,
+    black calc(var(--cone-spread) * 1%),
+    transparent calc((var(--cone-spread) + 20) * 1%),
+    transparent calc((100 - var(--cone-spread) - 20) * 1%),
+    black calc((100 - var(--cone-spread)) * 1%)
+  );
+
+  transition: opacity 200ms ease-out;
+}
+
+/* Camada de preenchimento/efeito suave */
+.border-glow-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: calc(24px - 2px);
+  background: linear-gradient(
+    135deg,
+    rgba(32, 185, 68, 0.08) 0%,
+    rgba(13, 108, 33, 0.04) 100%
+  );
+  opacity: calc(max(0, var(--fill-opacity) * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity))));
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+
+  /* Máscara radial suave */
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 0%,
+    black 50%,
+    transparent 100%
+  ),
+  conic-gradient(
+    from var(--cursor-angle) at 50% 50%,
+    transparent 10%,
+    black 20%,
+    black 80%,
+    transparent 90%
+  );
+  mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 0%,
+    black 50%,
+    transparent 100%
+  ),
+  conic-gradient(
+    from var(--cursor-angle) at 50% 50%,
+    transparent 10%,
+    black 20%,
+    black 80%,
+    transparent 90%
+  );
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+
+  transition: opacity 200ms ease-out;
+}
+
+/* Glow externo */
+.border-glow-card .edge-light {
+  content: "";
+  position: absolute;
+  inset: calc(var(--glow-padding) * -1);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  opacity: calc(max(0, (var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity))));
+  mix-blend-mode: plus-lighter;
+
+  /* Máscara cônica para glow direcional */
+  -webkit-mask-image: conic-gradient(
+    from var(--cursor-angle) at 50% 50%,
+    transparent 5%,
+    black 15%,
+    black 85%,
+    transparent 95%
+  );
+  mask-image: conic-gradient(
+    from var(--cursor-angle) at 50% 50%,
+    transparent 5%,
+    black 15%,
+    black 85%,
+    transparent 95%
+  );
+
+  box-shadow:
+    0 0 20px 10px var(--glow-color-40, hsl(120deg 100% 50% / 40%)),
+    0 0 40px 20px var(--glow-color-30, hsl(120deg 100% 50% / 30%)),
+    0 0 60px 30px var(--glow-color-20, hsl(120deg 100% 50% / 20%)),
+    inset 0 0 20px 5px var(--glow-color-20, hsl(120deg 100% 50% / 20%));
+
+  transition: opacity 200ms ease-out;
+}
+
+/* Estado hover - aumenta visibilidade */
+.border-glow-card:hover::before,
+.border-glow-card:hover::after,
+.border-glow-card:hover .edge-light {
+  opacity: 1 !important;
+}
+
+/* Estado inativo - fade out suave */
+.border-glow-card:not(:hover)::before,
+.border-glow-card:not(:hover)::after,
+.border-glow-card:not(:hover) .edge-light {
+  transition: opacity 500ms ease-in-out;
+}
+
+/* Animação de varredura (se ativada) */
+.border-glow-card.sweep-active {
+  --edge-proximity: 80;
+}
+
+/* Otimizações para mobile */
+@media (max-width: 768px) {
+  .border-glow-card {
+    --glow-padding: 25px;
+    --edge-sensitivity: 35;
+  }
+
+  /* Reduz intensidade em mobile para não "pesar" a performance */
+  .border-glow-card::before,
+  .border-glow-card::after,
+  .border-glow-card .edge-light {
+    transition: opacity 300ms ease-out !important;
+  }
+
+  /* Desativa glow externo em mobile para melhor performance */
+  .border-glow-card .edge-light {
+    display: none;
+  }
+}
+
+/* Performance: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .border-glow-card,
+  .border-glow-card::before,
+  .border-glow-card::after,
+  .border-glow-card .edge-light {
+    transition: none !important;
+  }
+}
+
+/* Compatibilidade com o cover existente */
+.cover[data-glow] {
+  position: relative;
+}
+
+.cover[data-glow] .edge-light {
+  display: block;
+}
