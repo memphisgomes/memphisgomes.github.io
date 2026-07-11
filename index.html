@@ -15,34 +15,36 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="border-glow.css">
 
-    <!-- Preload imagem crítica -->
-    <link rel="preload" as="image" href="assets/c.png">
+    <!-- Preload imagem crítica (versão otimizada, 3KB) -->
+    <link rel="preload" as="image" href="assets/c.webp">
 
-      <!-- Meta Pixel Code -->
-      <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1826974878672339');
-      fbq('track', 'PageView');
-      </script>
-      <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1826974878672339&ev=PageView&noscript=1"
-      /></noscript>
-      <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1826974878672339');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1826974878672339&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <main>
       <section class="hero">
         <div class="wrap hero__inner">
-          <img class="logo" src="assets/c.png" alt="Logo Dominando a Caligrafia" width="76" height="76">
+          <picture>
+            <source srcset="assets/c.webp" type="image/webp">
+            <img class="logo" src="assets/c.png" alt="Logo Dominando a Caligrafia" width="76" height="76">
+          </picture>
           <p class="eyebrow">✨ Material digital • Acesso imediato • Garantia de 5 dias</p>
           <h1>Dominando a Caligrafia</h1>
           <p class="hero__text">
@@ -50,38 +52,30 @@
             <strong style="color: #40db62;">Receba por e-mail em 2 minutos e imprima em casa!</strong>
           </p>
 
-          <!-- PREÇO E URGÊNCIA VISÍVEIS -->
-          <div class="hero-price">
-            <span class="price-old">De R$ 47,00</span>
-            <span class="price-now">Por apenas R$ 14,99</span>
-            <p class="urgency">⚠️ Por tempo limitado!</p>
+          <!-- CTA PRINCIPAL: visível sem precisar rolar a tela, leva até a oferta -->
+          <a class="button button--hero pulse" href="#comprar">
+            Quero meu material agora
+          </a>
+
+          <div class="trust-badges" aria-label="Selos de confiança">
+            <span>🔒 Pagamento seguro</span>
+            <span>⚡ Acesso em 2 minutos</span>
+            <span>✅ Garantia de 5 dias</span>
           </div>
 
-          <!-- Cards de produtos -->
-          <div class="product-stack" aria-label="Prévia do material de caligrafia">
-            <article class="cover cover--green" data-glow>
-              <span class="edge-light"></span>
-              <span class="cover__pill">304</span>
-              <div class="cover__content">
-                <strong>Atividades de Caligrafia</strong>
-                <small>letras, sílabas e palavras</small>
-              </div>
+          <!-- Resumo do conteúdo (cards simples, sem efeitos) -->
+          <div class="product-stack-simple" aria-label="Prévia do material de caligrafia">
+            <article class="simple-card">
+              <span class="simple-number">304</span>
+              <strong>Atividades de Caligrafia</strong>
             </article>
-            <article class="cover cover--dark" data-glow>
-              <span class="edge-light"></span>
-              <span class="cover__pill">139</span>
-              <div class="cover__content">
-                <strong>Desenhos para Colorir</strong>
-                <small>coordenação e criatividade</small>
-              </div>
+            <article class="simple-card">
+              <span class="simple-number">139</span>
+              <strong>Desenhos para Colorir</strong>
             </article>
-            <article class="cover cover--white" data-glow>
-              <span class="edge-light"></span>
-              <span class="cover__pill">Bônus</span>
-              <div class="cover__content">
-                <strong>Tabuada de Multiplicação</strong>
-                <small>material extra incluso</small>
-              </div>
+            <article class="simple-card">
+              <span class="simple-number">+1</span>
+              <strong>Bônus: Tabuada</strong>
             </article>
           </div>
         </div>
@@ -277,7 +271,7 @@
             <div class="proof-showcase">
               <h2>Veja o material na prática</h2>
               <div class="video-container">
-                <video controls playsinline poster="assets/c.png">
+                <video controls playsinline preload="none" poster="assets/poster.jpg" width="720" height="406">
                   <source src="assets/IMG_0500.mp4" type="video/mp4">
                   Seu navegador não suporta a reprodução de vídeos.
                 </video>
@@ -287,7 +281,7 @@
             <!-- Lado direito: Reviews -->
             <div class="proof-reviews">
               <h2>O material foi feito para uma rotina simples</h2>
-
+              
               <!-- Estatísticas de avaliações -->
               <div class="proof-stats">
                 <div class="rating-summary">
@@ -314,8 +308,8 @@
                   <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
                   <span class="verified-badge">✓ Compra verificada</span>
                   <p>
-                    "Estou usando as folhas aos poucos. Minha filha <strong>melhorou a letra em apenas 2 semanas</strong>!
-                    Ela gostou muito dos desenhos para colorir e ficou mais fácil sentar para treinar.
+                    "Estou usando as folhas aos poucos. Minha filha <strong>melhorou a letra em apenas 2 semanas</strong>! 
+                    Ela gostou muito dos desenhos para colorir e ficou mais fácil sentar para treinar. 
                     <strong>As atividades de coordenação motora</strong> fizeram toda diferença."
                   </p>
                 </div>
@@ -334,8 +328,8 @@
                   <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
                   <span class="verified-badge">✓ Compra verificada</span>
                   <p>
-                    "O arquivo ajuda muito! Posso imprimir só as páginas que quero repetir durante a semana.
-                    Uso com <strong>15 alunos da turma</strong> e todos estão evoluindo.
+                    "O arquivo ajuda muito! Posso imprimir só as páginas que quero repetir durante a semana. 
+                    Uso com <strong>15 alunos da turma</strong> e todos estão evoluindo. 
                     <strong>As atividades de treino de vogais</strong> são excelentes para reforço."
                   </p>
                 </div>
@@ -354,8 +348,8 @@
                   <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
                   <span class="verified-badge">✓ Compra verificada</span>
                   <p>
-                    "As <strong>304 atividades são muito bem organizadas</strong> e a prática ficou mais leve aqui em casa.
-                    Minha sobrinha pediu para repetir no dia seguinte! Em <strong>apenas 10 dias</strong>
+                    "As <strong>304 atividades são muito bem organizadas</strong> e a prática ficou mais leve aqui em casa. 
+                    Minha sobrinha pediu para repetir no dia seguinte! Em <strong>apenas 10 dias</strong> 
                     já vejo a evolução na escrita dela."
                   </p>
                 </div>
@@ -465,7 +459,10 @@
     <footer class="site-footer">
       <div class="wrap footer__inner">
         <div class="footer__brand">
-          <img src="assets/c.png" alt="Logo Dominando a Caligrafia">
+          <picture>
+            <source srcset="assets/c.webp" type="image/webp">
+            <img src="assets/c.png" alt="Logo Dominando a Caligrafia" width="58" height="58" loading="lazy">
+          </picture>
           <div>
             <strong>Dominando a Caligrafia</strong>
             <p>Material digital para treino de escrita, coordenação e estudos em casa.</p>
@@ -483,21 +480,6 @@
       </div>
     </footer>
 
-    <script src="border-glow.js"></script>
-    <script src="script.js"></script>
-  </body>
-</html>
-    <!-- Scripts otimizados e carregados de forma assíncrona -->
     <script defer src="script.js"></script>
-
-    <!-- Border-glow apenas para desktop -->
-    <script>
-      if (window.innerWidth > 768) {
-        const script = document.createElement('script');
-        script.src = 'border-glow.js';
-        script.defer = true;
-        document.body.appendChild(script);
-      }
-    </script>
   </body>
 </html>
