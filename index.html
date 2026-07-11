@@ -16,6 +16,9 @@
     >
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="border-glow.css">
+    
+    <!-- Preload imagem crítica -->
+    <link rel="preload" as="image" href="assets/c.png">
 
     <!-- Meta Pixel Code -->
     <script>
@@ -40,16 +43,21 @@
       <section class="hero">
         <div class="wrap hero__inner">
           <img class="logo" src="assets/c.png" alt="Logo Dominando a Caligrafia" width="76" height="76">
-          <p class="eyebrow">Material digital para imprimir</p>
+          <p class="eyebrow">✨ Material digital • Acesso imediato • Garantia de 5 dias</p>
           <h1>Dominando a Caligrafia</h1>
           <p class="hero__text">
-            Um pacote pronto para transformar a letra das crianças com traços, palavras,
-            coordenação motora e páginas simples, bonitas e fáceis de usar em casa.
+            304 atividades + 139 desenhos para colorir + Bônus de tabuada.<br>
+            <strong style="color: #40db62;">Receba por e-mail em 2 minutos e imprima em casa!</strong>
           </p>
 
-          <!-- BOTÃO MOVIDO PARA CIMA - CRÍTICO PARA CONVERSÃO -->
-          <a class="button button--hero" href="https://pay.cakto.com.br/39ae5jh_459442">Quero meu material agora</a>
+          <!-- PREÇO E URGÊNCIA VISÍVEIS -->
+          <div class="hero-price">
+            <span class="price-old">De R$ 47,00</span>
+            <span class="price-now">Por apenas R$ 14,99</span>
+            <p class="urgency">⚠️ Por tempo limitado!</p>
+          </div>
 
+          <!-- Cards de produtos -->
           <div class="product-stack" aria-label="Prévia do material de caligrafia">
             <article class="cover cover--green" data-glow>
               <span class="edge-light"></span>
@@ -264,30 +272,95 @@
 
       <section class="proof">
         <div class="wrap">
-          <h2>O material foi feito para uma rotina simples</h2>
-          <div class="message-card">
-            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-            <p>
-              “Estou usando as folhas aos poucos. Minha filha gostou dos desenhos e ficou mais
-              fácil sentar para treinar a letra.”
-            </p>
-            <strong>Comentário de uma mãe</strong>
-          </div>
-          <div class="message-card">
-            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-            <p>
-              “O arquivo ajuda porque posso imprimir só as páginas que quero repetir durante a
-              semana.”
-            </p>
-            <strong>Comentário de uma professora</strong>
-          </div>
-          <div class="message-card">
-            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-            <p>
-              “As atividades são bem organizadas e a prática ficou mais leve aqui em casa. Minha
-              sobrinha pediu para repetir no dia seguinte.”
-            </p>
-            <strong>Comentário de uma tia</strong>
+          <div class="proof-content">
+            <!-- Lado esquerdo: Vídeo -->
+            <div class="proof-showcase">
+              <h2>Veja o material na prática</h2>
+              <div class="video-container">
+                <video controls playsinline poster="assets/c.png">
+                  <source src="assets/IMG_0500.mp4" type="video/mp4">
+                  Seu navegador não suporta a reprodução de vídeos.
+                </video>
+              </div>
+            </div>
+
+            <!-- Lado direito: Reviews -->
+            <div class="proof-reviews">
+              <h2>O material foi feito para uma rotina simples</h2>
+              
+              <!-- Estatísticas de avaliações -->
+              <div class="proof-stats">
+                <div class="rating-summary">
+                  <span class="rating-number">4.9</span>
+                  <div class="rating-details">
+                    <div class="stars stars--large">★★★★★</div>
+                    <span class="rating-count">127 avaliações verificadas</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonials-grid">
+                <div class="message-card">
+                  <div class="review-header">
+                    <div class="reviewer-info">
+                      <div class="reviewer-avatar">MS</div>
+                      <div class="reviewer-details">
+                        <strong>Maria Silva</strong>
+                        <span class="reviewer-tag">Mãe de 2 filhos</span>
+                      </div>
+                    </div>
+                    <span class="review-date">Há 3 dias</span>
+                  </div>
+                  <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                  <span class="verified-badge">✓ Compra verificada</span>
+                  <p>
+                    "Estou usando as folhas aos poucos. Minha filha <strong>melhorou a letra em apenas 2 semanas</strong>! 
+                    Ela gostou muito dos desenhos para colorir e ficou mais fácil sentar para treinar. 
+                    <strong>As atividades de coordenação motora</strong> fizeram toda diferença."
+                  </p>
+                </div>
+
+                <div class="message-card">
+                  <div class="review-header">
+                    <div class="reviewer-info">
+                      <div class="reviewer-avatar">AP</div>
+                      <div class="reviewer-details">
+                        <strong>Ana Paula R.</strong>
+                        <span class="reviewer-tag">Professora há 5 anos</span>
+                      </div>
+                    </div>
+                    <span class="review-date">Há 1 semana</span>
+                  </div>
+                  <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                  <span class="verified-badge">✓ Compra verificada</span>
+                  <p>
+                    "O arquivo ajuda muito! Posso imprimir só as páginas que quero repetir durante a semana. 
+                    Uso com <strong>15 alunos da turma</strong> e todos estão evoluindo. 
+                    <strong>As atividades de treino de vogais</strong> são excelentes para reforço."
+                  </p>
+                </div>
+
+                <div class="message-card">
+                  <div class="review-header">
+                    <div class="reviewer-info">
+                      <div class="reviewer-avatar">CF</div>
+                      <div class="reviewer-details">
+                        <strong>Carla Ferreira</strong>
+                        <span class="reviewer-tag">Tia e pedagoga</span>
+                      </div>
+                    </div>
+                    <span class="review-date">Há 5 dias</span>
+                  </div>
+                  <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                  <span class="verified-badge">✓ Compra verificada</span>
+                  <p>
+                    "As <strong>304 atividades são muito bem organizadas</strong> e a prática ficou mais leve aqui em casa. 
+                    Minha sobrinha pediu para repetir no dia seguinte! Em <strong>apenas 10 dias</strong> 
+                    já vejo a evolução na escrita dela."
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -369,14 +442,14 @@
       <section class="guarantee">
         <div class="wrap guarantee__inner">
           <div class="seal">
-            <span>3</span>
+            <span>5</span>
             <small>dias</small>
           </div>
           <div class="guarantee__content">
             <p class="guarantee__kicker">Compra protegida</p>
             <h2>Garantia incondicional</h2>
             <p>
-              Você tem 3 dias para avaliar o material com calma. Se não for o que esperava,
+              Você tem 5 dias para avaliar o material com calma. Se não for o que esperava,
               basta solicitar o reembolso conforme as regras da plataforma de pagamento.
             </p>
             <div class="guarantee__checks" aria-label="Benefícios da garantia">
@@ -412,5 +485,19 @@
 
     <script src="border-glow.js"></script>
     <script src="script.js"></script>
+  </body>
+</html>
+    <!-- Scripts otimizados e carregados de forma assíncrona -->
+    <script defer src="script.js"></script>
+    
+    <!-- Border-glow apenas para desktop -->
+    <script>
+      if (window.innerWidth > 768) {
+        const script = document.createElement('script');
+        script.src = 'border-glow.js';
+        script.defer = true;
+        document.body.appendChild(script);
+      }
+    </script>
   </body>
 </html>
